@@ -358,9 +358,16 @@ vendored component directories.
 
 ## Licensing
 
-No top-level project license has been selected. Publication on GitHub does not by
-itself grant permission to reuse all original project files. Third-party code
-remains governed by the license notices in its own directories.
+Project-authored firmware, iOS code and documentation are licensed under the
+[Apache License 2.0](LICENSE). Copyright and attribution information is collected
+in [NOTICE](NOTICE).
 
-A top-level license should be selected before accepting external redistribution
-or contributions.
+The vendored component tree and reference sources are not relicensed by the
+top-level license. Their file headers and nearest directory licenses take
+precedence. The repository therefore also contains Espressif's product-scoped
+license, GPL-2.0-only reference sources, BSD-2-Clause material and dual-licensed
+Linux UAPI headers. See [the license map](LICENSES/README.md) and
+[third-party attribution](docs/THIRD_PARTY.md) for the exact scope.
+
+The GPL-2.0-only Raspberry Pi and Linux driver files are retained solely as
+reference material and are not listed in the ESP-IDF component build.
