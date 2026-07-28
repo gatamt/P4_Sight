@@ -1,0 +1,12 @@
+dependencies:
+  idf: ">=5.4,<5.5"
+  cmake_utilities: "0.*"
+  esp_wifi_remote: "*"
+  espressif/mdns: "^1.0.3"
+  espressif/esp-dl: ">=3.2.0"
+  espressif/human_face_detect: "*"
+  espressif/pedestrian_detect: "*"
+  espressif/cat_detect: "*"
+  espressif/dog_detect: "*"
+  espressif/hand_detect: "*"
+  espressif/coco_detect: "*"

@@ -1,0 +1,35 @@
+name: P4VideoViewer
+options:
+  bundleIdPrefix: com.gata
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "16.3"
+
+targets:
+  P4VideoViewer:
+    type: application
+    platform: iOS
+    sources:
+      - P4VideoViewer
+    info:
+      path: P4VideoViewer/Info.plist
+      properties:
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSLocalNetworkUsageDescription: "P4VideoViewer needs local network access to discover and stream video from ESP32-P4 board"
+        NSBonjourServices:
+          - _gatavideo._udp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gata.p4videoviewer
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.9"
+        CODE_SIGN_STYLE: Automatic
+        SUPPORTS_MACCATALYST: false
+        TARGETED_DEVICE_FAMILY: "1"
