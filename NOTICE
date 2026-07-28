@@ -1,0 +1,13 @@
+ESP32-P4_IMX708
+Copyright 2026 Gata Mam-Taha
+
+Project-authored material is licensed under the Apache License, Version 2.0,
+unless a file or directory states otherwise.
+
+This repository includes third-party software and reference material under
+separate licenses, including Apache-2.0, the ESPRESSIF MIT License,
+GPL-2.0-only, BSD-2-Clause and dual-licensed Linux UAPI terms. Those notices and
+licenses are preserved and take precedence for the applicable files. See
+LICENSES/README.md and docs/THIRD_PARTY.md.
+
+This NOTICE file is informational and does not modify any license terms.
