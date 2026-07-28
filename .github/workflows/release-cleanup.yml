@@ -1,0 +1,63 @@
+name: Final release cleanup
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches: [main]
+
+permissions:
+  actions: write
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.event.pull_request.head.ref == 'release-cleanup' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check release state
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 2
+
+      - name: Verify public root
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-list --count HEAD)" = "1"
+          test "$(git log -1 --format=%s)" = "Initial public release of ESP32-P4_IMX708"
+          test -f README.md
+          test "$(head -n 1 README.md)" = "# ESP32-P4_IMX708"
+          test ! -e .github
+
+      - name: Remove older automation records
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          current="$GITHUB_RUN_ID"
+          gh api --paginate "repos/$GITHUB_REPOSITORY/actions/runs?per_page=100" --jq '.workflow_runs[].id' |
+          while read -r run_id; do
+            if [ -n "$run_id" ] && [ "$run_id" != "$current" ]; then
+              gh api --method DELETE "repos/$GITHUB_REPOSITORY/actions/runs/$run_id" || true
+            fi
+          done
+
+      - name: Remove temporary branches
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for branch in bootstrap-run docs/final-comment-fixes; do
+            encoded=${branch//\//%2F}
+            gh api --method DELETE "repos/$GITHUB_REPOSITORY/git/refs/heads/$encoded" || true
+          done
+
+      - name: Remove cleanup branch
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method DELETE "repos/$GITHUB_REPOSITORY/git/refs/heads/release-cleanup"
