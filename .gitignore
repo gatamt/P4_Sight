@@ -1,0 +1,10 @@
+.DS_Store
+.tmp/
+tmp/
+GATA_P4_ESP_VIDEO/build/
+GATA_P4_ESP_VIDEO/managed_components/
+GATA_P4_ESP_VIDEO/dependencies.lock
+**/xcuserdata/
+**/*.xcuserstate
+__pycache__/
+*.py[cod]

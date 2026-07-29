@@ -1,0 +1,32 @@
+P4_Sight / ESP32-P4_IMX708
+Mixed-license source distribution
+
+This repository is not licensed as a single work under one repository-wide
+license. The license applicable to a file is determined in this order:
+
+1. A file-level SPDX identifier or license notice controls that file.
+2. Otherwise, the nearest license file in the directory tree controls.
+3. Otherwise, project-authored material is licensed under Apache-2.0.
+
+Project-authored application source, the iOS receiver and project documentation
+are available under Apache-2.0 unless a more specific notice applies. The full
+Apache-2.0 text is in LICENSES/Apache-2.0.txt.
+
+The active IMX708 register-definition and register-sequence files listed below
+contain material derived in substantial part from the Raspberry Pi Linux IMX708
+driver and are distributed under GPL-2.0-only:
+
+- GATA_P4_ESP_VIDEO/components/esp-video-components/esp_cam_sensor/
+  sensors/imx708/private_include/imx708_regs.h
+- GATA_P4_ESP_VIDEO/components/esp-video-components/esp_cam_sensor/
+  sensors/imx708/private_include/imx708_settings.h
+
+Other vendored and reference files retain their original Espressif, Apache,
+GPL, BSD or Linux UAPI terms. See LICENSES/README.md and
+docs/THIRD_PARTY.md for the complete path-specific map.
+
+No prebuilt firmware binary is distributed here. A firmware image built from
+this source includes material under more than one license and is not covered by
+Apache-2.0 alone. This repository does not represent that every component can
+be redistributed together under one permissive license. Redistributors are
+responsible for satisfying every applicable license.

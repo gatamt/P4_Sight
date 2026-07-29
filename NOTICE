@@ -1,0 +1,14 @@
+P4_Sight / ESP32-P4_IMX708
+Copyright 2026 Gata Mam-Taha
+
+The copyright above applies only to project-authored material.
+
+This is a mixed-license source distribution. Project-authored material is
+licensed under Apache-2.0 unless a more specific file or directory notice
+applies. Active IMX708 register files contain material derived from the
+GPL-2.0-only Raspberry Pi Linux IMX708 driver. Vendored Espressif components,
+Linux UAPI headers and other reference files retain their own notices and
+licenses.
+
+See LICENSE, LICENSES/README.md and docs/THIRD_PARTY.md. This NOTICE file is
+informational and does not alter any license terms.

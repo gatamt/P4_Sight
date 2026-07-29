@@ -1,0 +1,33 @@
+idf_component_register(
+    SRCS
+        "camera_bringup.c"
+        "wifi_station.c"
+        "mdns_announce.c"
+        "h264_encoder.c"
+        "udp_stream.c"
+        "yuv_to_rgb.c"
+        "yuv_to_rgb_hw.c"
+        "bbox_sender.c"
+        "ai_task.cpp"
+    INCLUDE_DIRS "."
+    REQUIRES
+        driver
+        esp_mm
+        esp_cam_sensor
+        esp_driver_gpio
+        esp_driver_i2c
+        esp_event
+        esp_hw_support
+        esp_netif
+        esp_psram
+        esp_sccb_intf
+        esp_system
+        esp_timer
+        esp_video
+        esp_wifi
+        freertos
+        log
+        lwip
+        nvs_flash
+        vfs
+)
